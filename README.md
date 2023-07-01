@@ -33,8 +33,5 @@ git checkout -b nome-da-branch
 ## Subindo para os ambientes
 Ao terminar as suas implementações, basta abrir uma pull request da **sua branch** para a **develop**. Ela estará pendente de aprovação de outra pessoa.
 Após a aprovação, caso queira subir para produção, basta abrir uma pull request da **develop** para a **main**.
-```
-git checkout -b nome-da-branch
-```
 
 
