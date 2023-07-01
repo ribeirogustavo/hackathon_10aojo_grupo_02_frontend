@@ -20,18 +20,22 @@ const Home = () => {
   const [movies, setMovies] = useState<IMovie[]>([]);
   const [searchText, setSearchText] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(true)
-  const getPersonAPI = useAPI(Movies.getMovies);
+  const moviesAPI = useAPI(Movies.getMovies);
+
+
 
   useEffect(() => {
     getData()
   }, []);
 
+
   const getData = () => {
     setIsLoading(true);
-    getPersonAPI
+    console.log("text: ", searchText)
+    moviesAPI
       .requestPromise(searchText)
       .then((info: IMovie[]) => {        
-        console.log(info);
+        console.log('info: ', info);
         setMovies(info);
         setIsLoading(false);
       })
